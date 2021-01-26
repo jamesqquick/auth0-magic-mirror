@@ -4,11 +4,13 @@ const { Client } = require("pg");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 require("dotenv").config();
+const path = require("path");
 
 const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use(cors());
+app.use(express.static("public"));
 
 app.get("/v1/meeting", (req, res) => {
   const client = new Client({
