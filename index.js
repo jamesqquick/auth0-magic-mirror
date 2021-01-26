@@ -43,7 +43,7 @@ app.post("/v1/update-meeting", (req, res) => {
       `UPDATE mirror set status = ${req.body.status}, updated_at = now();`,
       (err, data) => {
         if (err) {
-          res.status(500).send(JSON.stringify(error));
+          res.status(500).send(JSON.stringify(err));
         } else {
           res.send("Successfully updated");
         }
