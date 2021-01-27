@@ -39,7 +39,8 @@ app.post("/v1/update-meeting", (req, res) => {
     });
     client.connect();
     client.query(
-      `UPDATE mirror set status = '${req.body.status}', updated_at = now();`,
+      `UPDATE mirror set status = $1, updated_at = now();`,
+      [req.body.status],
       (err, data) => {
         if (err) {
           res.status(500).send(JSON.stringify(err));

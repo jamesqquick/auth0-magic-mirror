@@ -1,15 +1,30 @@
+// import { Auth0Provider } from "@auth0/auth0-react";
+// import { useAuth0 } from "@auth0/auth0-react";
+
 const Home = () => {
   const [text, setText] = React.useState("");
   const sendText = (custom) => {
-    fetch("https://auth0-magic-mirror.herokuapp.com/v1/update-meeting", {
-      mode: "no-cors",
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ status: custom || text })
+    axios({
+      method: "post",
+      url: "https://auth0-magic-mirror.herokuapp.com/v1/update-meeting",
+      data: { status: custom || text }
     });
   };
+  // const {
+  //   isLoading,
+  //   error,
+  //   isAuthenticated,
+  //   loginWithRedirect,
+  //   getAccessTokenSilently
+  // } = useAuth0();
+
+  // if (isLoading) return null;
+  // if (error) return <div>... oops looks like there is a error</div>;
+
+  // if (!isAuthenticated) {
+  //   loginWithRedirect();
+  // }
+
   return (
     <React.Fragment>
       <div className="mainContainer">
