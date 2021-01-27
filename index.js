@@ -4,7 +4,6 @@ const { Client } = require("pg");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 require("dotenv").config();
-const path = require("path");
 
 const PORT = process.env.PORT || 3000;
 
@@ -40,7 +39,7 @@ app.post("/v1/update-meeting", (req, res) => {
     });
     client.connect();
     client.query(
-      `UPDATE mirror set status = ${req.body.status}, updated_at = now();`,
+      `UPDATE mirror set status = '${req.body.status}', updated_at = now();`,
       (err, data) => {
         if (err) {
           res.status(500).send(JSON.stringify(err));
