@@ -14,11 +14,14 @@ input {
   width: 100%;
   margin: 50px 0;
 }
-
+.notification {
+  color: #000;
+  margin-top: 40px;
+}
 .mainContainer {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 40%;
   z-index: 10;
   display: flex;
   flex-direction: column;
