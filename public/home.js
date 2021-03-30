@@ -70,7 +70,7 @@ const Home = () => {
     const token = await getAccessTokenSilently();
     const res = await axios({
       method: "post",
-      url: "https://auth0-magic-mirror.herokuapp.com/v1/update-meeting",
+      url: "https://auth0-magic-mirror-jqq.herokuapp.com/v1/update-meeting",
       data: { status: custom || text },
       headers: {
         Authorization: `Bearer ${token}`
