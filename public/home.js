@@ -146,8 +146,8 @@ const Home = () => {
 const domContainer = document.querySelector("#root");
 ReactDOM.render(
   <Auth0Provider
-    domain="dev-rm3u1yq4.auth0.com"
-    clientId="Jck1XCeOhHUrTrp0LQp1V5cyz5ECXGJp"
+    domain="jamesqquick-demos.us.auth0.com"
+    clientId="zp5Y0Vg5ezTgwjPnxXteA6hhOzjEaZOj"
     audience="https://magicmirror/api"
     redirectUri={window.location.origin}
   >
